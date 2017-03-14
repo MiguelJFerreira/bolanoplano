@@ -1,4 +1,4 @@
-/* dc
+/* 
  * File:   adc.c
  * Author: Paulo Pedreiras
  *
@@ -26,7 +26,6 @@
 #include <p32xxxx.h>
 #include <plib.h>
 
-
 #define SYSCLK 80000000L // System clock frequency, in Hz
 #define PBUSCLK 40000000L // Peripheral bus clock
 
@@ -40,7 +39,8 @@ void _mon_putc(char c) {
 /*
  * 
  */
-int main(int argc, char** argv) {
+//int LerPosicao(int argc, char** argv) {
+int LerPosicao() {
     // Variable declarations;
     float res;
 
@@ -66,6 +66,15 @@ int main(int argc, char** argv) {
     // Enable module
     AD1CON1bits.ON = 1; // Enable A/D module (This must be the ***last instruction of configuration phase***)
 
+    //Configuration of three digital outputs
+    TRISDbits.TRISD1 = 0; // D0 as digital output RD1 e RD2 correspondem a RT e RL respectivamente
+    TRISDbits.TRISD2 = 0; // D0 as digital output
+    //TRISDbits.TRISD3 = 0; // D0 as digital output 
+    
+    //define the outputs value
+    PORTDbits.RD1 = 1;
+    PORTDbits.RD2 = 1;
+    
     // Welcome message
     printf("Prints voltage at AN0 (pin 16)\n\r");
 

@@ -1,4 +1,4 @@
-/* 
+/* dc
  * File:   adc.c
  * Author: Paulo Pedreiras
  *

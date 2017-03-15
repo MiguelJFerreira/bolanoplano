@@ -14,6 +14,8 @@ int Move(int dutycycle) {
    
   // Performance optimization (flash access time, enable instruct and data cache,... and PBClock setup
              //Timer 2 is the clock source of OCM
+
+  //o bruno e gay
   
   SYSTEMConfigPerformance(SYSCLK);
   mOSCSetPBDIV( OSC_PB_DIV_2 ); // This is necessary since SYSTEMConfigPerformance defaults FPBDIV to DIV_1

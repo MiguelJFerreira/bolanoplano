@@ -33,8 +33,7 @@ int Move(int dutycycle) {
   OC1CONbits.OCTSEL=0;  
   OC1CONbits.ON=1;                  //Enable OC1
 
-  //Start PWM generation
-  T2CONbits.TON=1;                  //Start the timer
+  
 
   
   while (1) {
@@ -50,6 +49,8 @@ int Move(int dutycycle) {
       }
       else{
          OC1RS=pwm_on/(256/(float)(PBUSCLK/1000000));  //Compute OC1xRS value 
+         //Start PWM generation
+         T2CONbits.TON=1;                  //Start the timer
       }
     
   }

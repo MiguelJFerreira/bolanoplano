@@ -72,8 +72,8 @@ int LerPosicao() {
     //TRISDbits.TRISD3 = 0; // D0 as digital output 
     
     //define the outputs value
-    PORTDbits.RD1 = 1;
-    PORTDbits.RD2 = 1;
+    LATDbits.LATD1 = 1;
+    LATDbits.LATD2 = 1;
     
     // Welcome message
     printf("Prints voltage at AN0 (pin 16)\n\r");

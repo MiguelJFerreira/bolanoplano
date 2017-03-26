@@ -7,9 +7,8 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
-
-  
-    int Move();
+    
+    int Move(int erro);
 
 
     /* Provide C++ Compatibility */
